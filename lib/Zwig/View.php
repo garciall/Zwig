@@ -21,12 +21,22 @@ class Zwig_View extends Zend_View_Abstract
 
     protected $_zwig;
 
+    protected $_zend;
+
     public function setEngine(Twig_Environment $engine) {
         $this->_zwig = $engine;
     }
 
     public function getEngine() {
         return $this->_zwig;
+    }
+
+    public function setFailbackEngine(Zend_View_Abstract $engine) {
+        $this->_zend = $engine;
+    }
+
+    public function getFailbackEngine() {
+        return $this->_zend;
     }
 
     public function addScriptPath($path) {
